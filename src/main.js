@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import { io } from "socket.io-client";
 
 // Connect to server
-const socket = io("http://192.168.0.124:3000");
+const socket = io();
 socket.on("connect", () => {
   console.log("Connected with id:", socket.id);
   // We will emit 'raccoonJoined' from the GameScene once it's ready.

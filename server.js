@@ -1,17 +1,27 @@
+const express = require("express");
+const http = require("http");
 const { Server } = require("socket.io");
-const fs = require('fs');
-const path = require('path');
-const { fileURLToPath } = require("url");
+const fs = require("fs");
+const path = require("path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: { origin: "*" }
+});
 
+// Serve Vite build
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.get("*", (req, res) => {
+app.get((req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log("Server running on", PORT);
+});
 
 // --- Load Level Data ---
 let spawnPoints = [];
@@ -84,11 +94,6 @@ function handleJoin(socket, roomCode, ack) {
         io.to(roomCode).emit('startGame', raccoonsInRoomNow);
     }
 }
-
-// --- Server Setup ---
-const io = new Server(3000, {
-  cors: { origin: "*" }
-});
 
 const raccoons = {}; // Single source of truth for all player states
 
