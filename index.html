@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DeeWee 2</title>
+
+    <link rel="icon" type="image/jpg" href="assets/favicon.jpg">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75,100..900;1,75,100..900&family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div style="flex-grow: 1; display: flex; border-top: 10px solid lightgray;">
+      <!-- Main menu UI -->
+      <div id="main-menu-ui-div">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="code-entry-container">
+              <div class="input-group">
+                <input id="code-text-field" class="roboto-condensed-extralight" type="number" placeholder="Enter Code">
+                <button id="code-proceed-button" class="roboto-condensed-extralight">></button>
+              </div>
+              <label for="code-text-field" class="roboto-condensed-extralight code-supporting-text"></label>
+            </div>
+          </div>
+          <div style="width: 80%; display: flex; align-items: center;">
+              <hr>
+              <label class="roboto-condensed-extralight">or</label>
+              <hr>
+
+          </div>
+          <button id="join-random-button" class="roboto-condensed-extralight btn-outline">Join Random</button>
+      </div>
+
+      <!-- Game controls -->
+       <div id="game-controls-div">
+            <button id="action-button" class="roboto-condensed-extralight btn-outline" disabled>E</button>
+       </div>
+    </div>
+
+    <script src="/src/joy.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

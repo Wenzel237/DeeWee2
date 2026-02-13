@@ -1,0 +1,156 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+hr {
+    border: none;      
+    border-radius: 5px;
+    width: 40%;
+    background-color: #a3b18a44;
+    height: 6px;
+}
+
+/* Remove arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fae4ac;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+
+.roboto-condensed-black {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: "wdth" 75;
+}
+.roboto-condensed-extralight {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings: "wdth" 75;
+}
+
+button {
+    font-size: 4rem;
+    background-color: #f2aeb5;
+    border-radius: 60px;
+    height: fit-content;
+    padding: 20px 50px;
+    text-align: center;
+    outline: none;
+    border-color: #f2aeb5;
+    border-width: 5px;
+    border-style: solid;
+}
+button:hover {
+    background-color: #fdb7be;
+
+}
+.btn-outline {
+    background-color: transparent;
+}
+
+#main-menu-ui-div {
+    flex-grow: 1;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+#code-text-field {
+    font-size: 4rem;
+    background-color: #f2aeb588;
+    height: fit-content;
+    margin-right: 5px;
+    padding: 20px;
+    border-radius: 60px 10px 10px 60px;
+    text-align: center;
+    outline: none;
+    border-color: #f2aeb5;
+    border-width: 5px;
+    border-style: solid;
+}
+#code-proceed-button {
+    border-radius: 10px 60px 60px 10px;
+}
+
+#game-controls-div {
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+#joystick {
+    margin-left: 8%;
+
+}
+
+label {
+    font-size: 3rem;
+}
+
+.code-entry-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+}
+.code-supporting-text {
+    font-size: 2rem;
+}
+
+#action-button {
+    border-radius: 30px;
+    margin-right: 8%;
+    border-color: #b9b0a3;
+}
+#action-button:disabled:hover{
+    background-color: transparent;
+}
+
+@media (orientation: landscape) {
+    body {
+        flex-direction: row-reverse;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+
+    #code-text-field {
+        font-size: 2rem;
+    }
+
+    label {
+        font-size: 2rem;
+    }
+
+    .code-supporting-text {
+        font-size: 1rem;
+    }
+}
